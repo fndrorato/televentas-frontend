@@ -3,6 +3,7 @@ FROM node:18-alpine as build
 
 WORKDIR /app
 
+COPY .env .env   
 # Copia package.json e package-lock.json
 COPY package*.json ./
 
@@ -16,7 +17,7 @@ RUN npm install --legacy-peer-deps
 COPY . .
 
 # Gera build otimizado
-# RUN npm run build
+RUN npm run build
 
 # Etapa 2: container final com Nginx
 FROM nginx:stable-alpine
