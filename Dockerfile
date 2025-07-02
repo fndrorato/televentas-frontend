@@ -29,6 +29,7 @@ COPY --from=build /app/build /usr/share/nginx/html
 
 # (Opcional) Copia nginx.conf customizado, se houver
 # COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
